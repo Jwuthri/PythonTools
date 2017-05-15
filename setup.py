@@ -13,6 +13,7 @@ setup(
     packages=['pytools'],
     version='0.1.0',
     url="https://github.com/Jwuthri/PythonTools.git",
+    download_url ="https://github.com/Jwuthri/PythonTools/archive/0.1.tar.gz",
     description="Some snippets for python",
     author="Julien WUTHRICH",
     install_requires=REQUIREMENTS,
