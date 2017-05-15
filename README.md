@@ -1,2 +1,2 @@
 # PythonTools
-Just some snippet usefull
+Just some usefull snippet
