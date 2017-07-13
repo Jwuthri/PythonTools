@@ -5,6 +5,7 @@ Created on July 2017
 @author: JulienWuthrich
 """
 
+
 def change_list_type(item, func):
 
     if isinstance(item, list):

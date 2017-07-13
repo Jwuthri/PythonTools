@@ -7,6 +7,8 @@ Created on July 2017
 import time
 import logging
 import functools
+import multiprocessing as mp
+
 import pandas as pd
 
 import pytools
@@ -74,22 +76,3 @@ def mp_func(func):
         return apply
 
     return temp
-
-
-def make_signature(func):
-    spec = signature(func)
-    if spec.defaults is None:
-        n_wo_defaults = len(spec.args)
-        defaults = ('',) * n_wo_defaults
-    else:
-        n_wo_defaults = len(spec.args) - len(spec.defaults)
-        defaults = ('',) * n_wo_defaults + spec.defaults
-    args = []
-    for i, (var, default) in enumerate(zip(spec.args, defaults)):
-        args.append(var if default == '' else var + '=' + repr(default))
-    if spec.varargs:
-        args.append('*' + spec.varargs)
-    if spec.keywords:
-        args.append('**' + spec.keywords)
-
-    return args, spec.args
